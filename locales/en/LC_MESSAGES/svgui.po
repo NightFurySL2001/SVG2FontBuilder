@@ -1,0 +1,413 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-06-03 10:11+0800\n"
+"PO-Revision-Date: 2023-06-03 10:12+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: InfoScreen.kv:43
+msgid "Current font information language"
+msgstr "Current font information language"
+
+#: InfoScreen.kv:72 InfoScreen.kv:86 InfoScreen.py:400 svgbuilder.py:233
+msgid "Only ASCII characters are accepted for English names."
+msgstr "Only ASCII characters are accepted for English names."
+
+#: InfoScreen.kv:81
+msgid "Font family name"
+msgstr "Font family name"
+
+#: InfoScreen.kv:93
+msgid "Font style name"
+msgstr "Font style name"
+
+#: InfoScreen.kv:108
+msgid "Full font name"
+msgstr "Full font name"
+
+#: InfoScreen.kv:119
+msgid "Major"
+msgstr "Major"
+
+#: InfoScreen.kv:120 InfoScreen.kv:136
+msgid "Max 999"
+msgstr "Max 999"
+
+#: InfoScreen.kv:135
+msgid "Minor"
+msgstr "Minor"
+
+#: InfoScreen.kv:147
+msgid "Font version text"
+msgstr "Font version text"
+
+#: InfoScreen.kv:154
+msgid "Save info"
+msgstr "Save info"
+
+#: InfoScreen.kv:160
+msgid "You may safely ignore the additional fields below."
+msgstr "You may safely ignore the additional fields below."
+
+#: InfoScreen.kv:170
+msgid "Copyright notice"
+msgstr "Copyright notice"
+
+#: InfoScreen.kv:179
+msgid "License notice"
+msgstr "License notice"
+
+#: InfoScreen.kv:186
+msgid "License URL"
+msgstr "License URL"
+
+#: InfoScreen.kv:196
+msgid "Trademark"
+msgstr "Trademark"
+
+#: InfoScreen.kv:203
+msgid "Designer name"
+msgstr "Designer name"
+
+#: InfoScreen.kv:209
+msgid "Designer URL"
+msgstr "Designer URL"
+
+#: InfoScreen.kv:217
+msgid "Vendor code"
+msgstr "Vendor code"
+
+#: InfoScreen.kv:225
+msgid "Vendor URL"
+msgstr "Vendor URL"
+
+#: InfoScreen.kv:233
+msgid "Manufacturer name"
+msgstr "Manufacturer name"
+
+#: InfoScreen.kv:242
+msgid "Description"
+msgstr "Description"
+
+#: InfoScreen.kv:243
+msgid ""
+"Can contain revision information, usage recommendations, history, features, "
+"etc."
+msgstr ""
+"Can contain revision information, usage recommendations, history, features, "
+"etc."
+
+#: InfoScreen.kv:250
+msgid "Sample text"
+msgstr "Sample text"
+
+#: InfoScreen.py:97
+msgid "Add a new language"
+msgstr "Add a new language"
+
+#: InfoScreen.py:108 InfoScreen.py:253
+msgid "CANCEL"
+msgstr "CANCEL"
+
+#: InfoScreen.py:114 InfoScreen.py:237 InfoScreen.py:259 SetupScreen.py:59
+msgid "OK"
+msgstr "OK"
+
+#: InfoScreen.py:233
+msgid "Error"
+msgstr "Error"
+
+#: InfoScreen.py:234
+msgid "English name records can not be removed."
+msgstr "English name records can not be removed."
+
+#: InfoScreen.py:249 MetricScreen.py:147 MetricScreen.py:169
+msgid "Warning"
+msgstr "Warning"
+
+#: InfoScreen.py:250
+msgid "Are you sure you want to remove name records for {}?"
+msgstr "Are you sure you want to remove name records for {}?"
+
+#: InfoScreen.py:430
+msgid "Please check if all English names are present."
+msgstr "Please check if all English names are present."
+
+#: InfoScreen.py:470
+msgid "Font information saved."
+msgstr "Font information saved."
+
+#: MetricScreen.kv:21
+msgid "UPM"
+msgstr "UPM"
+
+#: MetricScreen.kv:22
+msgid "Ascender and descender value should add up to UPM value."
+msgstr "Ascender and descender value should add up to UPM value."
+
+#: MetricScreen.kv:34
+msgid "Ascender"
+msgstr "Ascender"
+
+#: MetricScreen.kv:45
+msgid "Descender"
+msgstr "Descender"
+
+#: MetricScreen.kv:58
+msgid "Line gap"
+msgstr "Line gap"
+
+#: MetricScreen.kv:59
+msgid ""
+"The distance between descender of first line and ascender of second line"
+msgstr ""
+"The distance between descender of first line and ascender of second line"
+
+#: MetricScreen.kv:81
+msgid "Auto calculate safe box metrics"
+msgstr "Auto calculate safe box metrics"
+
+#: MetricScreen.kv:88
+msgid "Safe ascender"
+msgstr "Safe ascender"
+
+#: MetricScreen.kv:98
+msgid "Safe descender"
+msgstr "Safe descender"
+
+#: MetricScreen.kv:105
+msgid "Save metrics"
+msgstr "Save metrics"
+
+#: MetricScreen.py:148
+msgid "Ascender or descender value is greater than UPM value. Are you sure?"
+msgstr "Ascender or descender value is greater than UPM value. Are you sure?"
+
+#: MetricScreen.py:151 MetricScreen.py:173
+msgid "Continue"
+msgstr "Continue"
+
+#: MetricScreen.py:157 MetricScreen.py:179
+msgid "Fix"
+msgstr "Fix"
+
+#: MetricScreen.py:170
+msgid ""
+"Ascender and descender value doesn't sum up to UPM value. This might cause "
+"issue in CJK fonts. Are you sure?"
+msgstr ""
+"Ascender and descender value doesn't sum up to UPM value. This might cause "
+"issue in CJK fonts. Are you sure?"
+
+#: MetricScreen.py:200
+msgid "Font metrics saved."
+msgstr "Font metrics saved."
+
+#: SVG2FontBuilder.kv:26 SVG2FontBuilder.kv:51
+msgid "SVG2FontBuilder"
+msgstr "SVG2FontBuilder"
+
+#: SVG2FontBuilder.kv:53
+msgid "SVG to OpenType font generator"
+msgstr "SVG to OpenType font generator"
+
+#: SVG2FontBuilder.kv:58
+msgid "Setup"
+msgstr "Setup"
+
+#: SVG2FontBuilder.kv:64
+msgid "Font Info"
+msgstr "Font Info"
+
+#: SVG2FontBuilder.kv:70
+msgid "Font Metrics"
+msgstr "Font Metrics"
+
+#: SVG2FontBuilder.kv:78
+msgid "Software"
+msgstr "Software"
+
+#: SVG2FontBuilder.kv:81
+msgid "Settings"
+msgstr "Settings"
+
+#: SVG2FontBuilder.kv:87
+msgid "About"
+msgstr "About"
+
+#: SVG2FontBuilder.kv:138
+msgid "Processing..."
+msgstr "Processing..."
+
+#: SVG2FontBuilder.kv:144
+msgid ""
+"Made by @NightFurySL2001\n"
+"Licensed under MIT License"
+msgstr ""
+"Made by @NightFurySL2001\n"
+"Licensed under MIT License"
+
+#: SetupScreen.kv:18
+msgid "SVG folder"
+msgstr "SVG folder"
+
+#: SetupScreen.kv:19
+msgid "The folder containing SVG files"
+msgstr "The folder containing SVG files"
+
+#: SetupScreen.kv:24 SetupScreen.kv:64
+msgid "Choose..."
+msgstr "Choose..."
+
+#: SetupScreen.kv:38
+msgid "Use filename to auto assign Unicode codepoint"
+msgstr "Use filename to auto assign Unicode codepoint"
+
+#: SetupScreen.kv:51
+msgid "CSV mapping file"
+msgstr "CSV mapping file"
+
+#: SetupScreen.kv:52
+msgid "A CSV file mapping filenames with characters"
+msgstr "A CSV file mapping filenames with characters"
+
+#: SetupScreen.kv:77
+msgid "Logs"
+msgstr "Logs"
+
+#: SetupScreen.kv:92
+msgid "Generate"
+msgstr "Generate"
+
+#: SetupScreen.py:33
+msgid "Choose SVG folder"
+msgstr "Choose SVG folder"
+
+#: SetupScreen.py:44
+msgid "Choose CSV file"
+msgstr "Choose CSV file"
+
+#: SetupScreen.py:45
+msgid "CSV file (.csv)"
+msgstr "CSV file (.csv)"
+
+#: SetupScreen.py:45
+msgid "Text file (.txt)"
+msgstr "Text file (.txt)"
+
+#: SetupScreen.py:45 SetupScreen.py:94
+msgid "All files"
+msgstr "All files"
+
+#: SetupScreen.py:56
+msgid ""
+"A comma-separated file containing a list of SVG filenames and their "
+"corresponding character/glyph name.\n"
+"Example: `Artboard 1.svg, uni0041`"
+msgstr ""
+"A comma-separated file containing a list of SVG filenames and their "
+"corresponding character/glyph name.\n"
+"Example: `Artboard 1.svg, uni0041`"
+
+#: SetupScreen.py:78
+msgid "SVG folder does not exist."
+msgstr "SVG folder does not exist."
+
+#: SetupScreen.py:84
+msgid "CSV file does not exist."
+msgstr "CSV file does not exist."
+
+#: SetupScreen.py:92
+msgid "Save font file to"
+msgstr "Save font file to"
+
+#: SetupScreen.py:94
+msgid "OpenType/CFF font (.otf)"
+msgstr "OpenType/CFF font (.otf)"
+
+#: SetupScreen.py:102
+msgid "No save location chosen. Font is not generated."
+msgstr "No save location chosen. Font is not generated."
+
+#: svgbuilder.py:44
+msgid "Version {}  "
+msgstr "Version {}  "
+
+#: svgbuilder.py:129
+msgid "Theme"
+msgstr "Theme"
+
+#: svgbuilder.py:130
+msgid "Choose your theme"
+msgstr "Choose your theme"
+
+#: svgbuilder.py:137
+msgid "Language"
+msgstr "Language"
+
+#: svgbuilder.py:138
+msgid "Choose your language"
+msgstr "Choose your language"
+
+#: svgbuilder.py:145
+msgid "Normalize SVG"
+msgstr "Normalize SVG"
+
+#: svgbuilder.py:146
+msgid ""
+"Normalize SVG before processing with picoSVG. Includes tracing strokes and "
+"clip paths to normal paths."
+msgstr ""
+"Normalize SVG before processing with picoSVG. Includes tracing strokes and "
+"clip paths to normal paths."
+
+#: svgbuilder.py:152
+msgid "Strict mode"
+msgstr "Strict mode"
+
+#: svgbuilder.py:153
+msgid ""
+"When reading from CSV file, ignore SVG files that are not listed in the CSV "
+"file."
+msgstr ""
+"When reading from CSV file, ignore SVG files that are not listed in the CSV "
+"file."
+
+#: svgbuilder.py:172
+msgid "Font generated! Location: {}"
+msgstr "Font generated! Location: {}"
+
+#: svgbuilder.py:180
+msgid "Font building failed."
+msgstr "Font building failed."
+
+#: svgbuilder.py:251
+msgid "Please check your files are encoded using UTF-8 (especially CSV file!)."
+msgstr ""
+"Please check your files are encoded using UTF-8 (especially CSV file!)."
+
+#: svgbuilder.py:269
+msgid ""
+"If you are using Adobe Illustrator, please use \"Export As...\" instead of "
+"\"Save As...\"."
+msgstr ""
+"If you are using Adobe Illustrator, please use \"Export As...\" instead of "
+"\"Save As...\"."
+
+#: svgbuilder.py:277
+msgid "Bitmap images are not allowed in SVG files."
+msgstr "Bitmap images are not allowed in SVG files."
+
+#~ msgid "Save OTF to"
+#~ msgstr "Save OTF to"

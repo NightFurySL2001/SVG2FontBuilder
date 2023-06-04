@@ -1,0 +1,107 @@
+#: import _ localization._
+
+<MetricScreen>
+    # get id inside out to root for object reference
+    font_upm: font_upm
+    ascender: ascender
+    descender: descender
+    line_gap: line_gap
+    auto_calc_safebox: auto_calc_safebox
+    safe_ascender: safe_ascender
+    safe_descender: safe_descender
+
+    MDGridLayout:
+        cols: 1
+        padding: "24dp", "8dp"
+
+        SetupRow:
+            MDTextField:
+                id: font_upm
+                pos_hint: {'center_y': .5}
+                hint_text: _("UPM")
+                helper_text: _("Ascender and descender value should add up to UPM value.")
+                # allow tabbing to next input field
+                write_tab: False
+                text: "1000"
+                on_focus: 
+                    if root.font_upm_menu is None: root.init_upm_menu()
+                    if self.focus: root.font_upm_menu.open()
+        
+        SetupRow:
+            MDTextField:
+                id: ascender
+                pos_hint: {'center_y': .5}
+                hint_text: _("Ascender")
+                input_filter: "int"
+                required: True
+                write_tab: False
+                text: "880"
+                on_text: root.calc_safe_box()
+                error: int(ascender.text or 0) > int(font_upm.text or 0)
+
+            MDTextField:
+                id: descender
+                pos_hint: {'center_y': .5}
+                hint_text: _("Descender")
+                input_filter: "int"
+                required: True
+                write_tab: False
+                text: "120"
+                on_text: root.calc_safe_box()
+                error: int(descender.text or 0) > int(font_upm.text or 0)
+                
+        SetupRow:
+            MDTextField:
+                id: line_gap
+                pos_hint: {'center_y': .5}
+                size_hint_x: 2
+                hint_text: _("Line gap")
+                helper_text: _("The distance between descender of first line and ascender of second line")
+                input_filter: "int"
+                required: True
+                write_tab: False
+                text: "0"
+
+            MDTextField:
+                pos_hint: {'center_y': .5}
+                disabled: True
+                line_color_normal: (0, 0, 0, 0)
+                
+        SetupRow:
+            spacing: "32dp"
+            MDSwitch:
+                id: auto_calc_safebox
+                size_hint: None, None
+                active: True
+                on_active: root.calc_safe_box()
+
+            MDLabel:
+                size_hint_y:  None
+                height: auto_calc_safebox.height
+                text: _("Auto calculate safe box metrics")
+
+        SetupRow:
+            MDTextField:
+                id: safe_ascender
+                readonly: auto_calc_safebox.active
+                pos_hint: {'center_y': .5}
+                hint_text: _("Safe ascender")
+                input_filter: "int"
+                required: True
+                write_tab: False
+                text: "1100"
+
+            MDTextField:
+                id: safe_descender
+                readonly: auto_calc_safebox.active
+                pos_hint: {'center_y': .5}
+                hint_text: _("Safe descender")
+                input_filter: "int"
+                required: True
+                write_tab: False
+                text: "250"
+                
+        MDRaisedButton:
+            text: _("Save metrics")
+            md_bg_color: app.theme_cls.accent_color
+            on_press: root.prepare_metrics()

@@ -1,0 +1,164 @@
+#: import MDFadeSlideTransition kivymd.uix.transition.transition.MDFadeSlideTransition
+#: import _ localization._
+
+MDFloatLayout:
+    screen_manager: screen_manager.__init__
+    
+    MDNavigationLayout:
+        
+        MDNavigationDrawer:
+            id: nav_drawer
+            type: "standard"
+            radius: (0, 16, 16, 0)
+            pos_hint: {"top": 1}
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+        MDScreenManager:
+            MDScreen:
+                MDBoxLayout:
+                    orientation: "vertical"
+                    MDTopAppBar:
+                        pos_hint: {"top": 1}
+                        elevation: 4
+                        title: _("SVG2FontBuilder")
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("toggle")]]
+                    
+                    MDScreenManager:
+                        id: screen_manager
+                        transition: MDFadeSlideTransition()
+                        
+                        SetupScreen:
+                            name: "setupscr1"
+
+                        InfoScreen:
+                            name: "infoscr2"
+                            
+                        MetricScreen:
+                            name: "metricscr3"
+
+                        AboutScreen:
+                            name: "aboutscr"
+
+
+# Drawer content
+<ContentNavigationDrawer@MDScrollView>
+    MDNavigationDrawerMenu:
+
+        MDNavigationDrawerHeader:
+            title: _("SVG2FontBuilder")
+            title_color: app.theme_cls.text_color
+            text: _("SVG to OpenType font generator")
+            spacing: "4dp"
+            padding: "12dp", 0, 0, "36dp"
+
+        DrawerClickableItem:
+            text: _("Setup")
+            icon: "format-font"
+            on_release:
+                root.screen_manager.current = "setupscr1"
+
+        DrawerClickableItem:
+            text: _("Font Info")
+            icon: "book-information-variant"
+            on_release:
+                root.screen_manager.current = "infoscr2"
+        
+        DrawerClickableItem:
+            text: _("Font Metrics")
+            icon: "format-letter-spacing-variant"
+            on_release:
+                root.screen_manager.current = "metricscr3"
+
+        MDNavigationDrawerDivider:
+
+        MDNavigationDrawerLabel:
+            text: _("Software")
+        
+        DrawerClickableItem:
+            text: _("Settings")
+            icon: "cog"
+            on_release:
+                app.open_settings()
+                
+        DrawerClickableItem:
+            text: _("About")
+            icon: "information"
+            on_release:
+                root.screen_manager.current = "aboutscr"
+
+
+# Drawer content label class
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: app.theme_cls.primary_color
+    text_color: app.theme_cls.secondary_text_color
+    icon_color: app.theme_cls.secondary_text_color
+    ripple_color: app.theme_cls.bg_dark
+    selected_color: app.theme_cls.accent_color
+
+# warning snackbar
+<MDWarningSnackbar>
+    MDBoxLayout:
+        orientation: "horizontal"
+        padding: "8dp"
+        spacing: "16dp"
+
+        MDIcon:
+            size_hint: None, None
+            pos_hint: {'center_y': .5}
+            icon: root.icon
+        MDLabel:
+            id: text_bar
+            size_hint_y: None
+            height: self.texture_size[1]
+            text: root.text
+            font_size: root.font_size
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.text_color
+            shorten: True
+            shorten_from: 'right'
+            pos_hint: {'center_y': .5}
+
+# loading spinner
+<LoadingScreen>
+    size_hint_y: None
+    height: dp(46)
+    pos_hint: {'center_y': .95}
+    spacing: "32dp"
+    
+    MDSpinner:
+        size_hint: None, None
+        size: dp(46), dp(46)
+        pos_hint: {'center_y': 0.5}
+        active: True
+            
+    MDLabel:
+        text: _("Processing...")
+        pos_hint: {'center_y': 0.5}
+
+<AboutScreen>
+    MDFloatLayout:
+        MDLabel:
+            text: _("Made by @NightFurySL2001\nLicensed under MIT License")
+            halign: "center"
+            size_hint_y: None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        MDLabel:
+            text: root.app_version_tag
+            halign: "right"
+            size_hint_y: None
+            height: self.texture_size[1] * 2
+            pos_hint: {'right': 1, "bottom":1}
+
+
+# sample code to copy for showing box size
+<ColourBoundingBox@BaseLayout>
+    canvas.before:
+        Color:
+            rgba: 1., 0., 0., .3
+        Rectangle:
+            pos: self.pos
+            size: self.size

@@ -1,0 +1,252 @@
+#: import _ localization._
+#: import date datetime.date
+
+<InfoScreen>
+    current_info_lang_code: "en"
+    # get id inside out to root for object reference
+    info_lang: info_lang
+    add_info_lang_btn: add_info_lang_btn
+    font_name: font_name
+    font_style: font_style
+    font_full_name: font_full_name
+    version_num_maj: version_num_maj
+    version_num_min: version_num_min
+    version_text: version_text
+    copyright: copyright
+    license: license
+    license_url: license_url
+    trademark: trademark
+    designer_name: designer_name
+    designer_url: designer_url
+    vendor_code: vendor_code
+    vendor_url: vendor_url
+    manufacturer_name: manufacturer_name
+    description: description
+    sample_text: sample_text
+
+    MDScrollView:
+        MDGridLayout:
+            cols: 1
+            padding: "24dp", "8dp"
+            size_hint_y: None
+            height: self.minimum_height
+
+            MDRelativeLayout:
+                size: self.size[0], info_lang.height
+                pos: self.pos
+                size_hint_y: None
+            
+                MDTextField:
+                    id: info_lang
+                    pos_hint: {"center_y": .5}
+                    write_tab: False
+                    hint_text: _("Current font information language")
+                    text: "English, United States"
+                    readonly: True
+                    on_focus: 
+                        if self.focus and root.info_lang_menu is not None: root.info_lang_menu.open()
+
+                MDIconButton:
+                    id: add_info_lang_btn
+                    icon: "minus"
+                    pos_hint: {"center_y": .5}
+                    size_hint: None, None
+                    size: 16, 16
+                    pos: info_lang.width - self.width * 2 + dp(8), 0
+                    theme_text_color: "Hint"
+                    on_release: root.show_delete_language_dialog()
+
+                MDIconButton:
+                    id: add_info_lang_btn
+                    icon: "plus"
+                    pos_hint: {"center_y": .5}
+                    size_hint: None, None
+                    size: 16, 16
+                    pos: info_lang.width - self.width + dp(8), 0
+                    theme_text_color: "Hint"
+                    on_release: root.show_add_info_lang_dialog()
+
+            # label hide when not english
+            MDLabel:
+                font_style: "Subtitle2"
+                text: _("Only ASCII characters are accepted for English names.") if root.current_info_lang_code == "en" else ""
+                size_hint_y: None
+                height: (self.texture_size[1] * 1.5) if root.current_info_lang_code == "en" else 0
+
+            SetupRow:
+                MDTextField:
+                    id: font_name
+                    pos_hint: {'center_y': .5}
+                    size_hint_x: 2
+                    hint_text: _("Font family name")
+                    required: True
+                    # allow tabbing to next input field
+                    write_tab: False
+                    text: "My Font"
+                    helper_text: _("Only ASCII characters are accepted for English names.")
+                    helper_text_mode: "on_error"
+                    on_text: root.verify_ascii_name()
+                
+                MDTextField:
+                    id: font_style
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Font style name")
+                    required: True
+                    write_tab: False
+                    text: "Regular"
+                    on_focus: 
+                        if root.font_style_menu is None: root.init_style_menu()
+                        if self.focus: root.font_style_menu.open()
+            
+            SetupRow:
+                MDTextField:
+                    id: font_full_name
+                    readonly: True
+                    pos_hint: {'center_y': .5}
+                    size_hint_x: 2
+                    text: font_name.text + "-" + font_style.text
+                    hint_text: _("Full font name")
+                    # only require if english
+                    required: True
+                    write_tab: False
+                    
+            SetupRow:
+                spacing: "6dp"
+
+                MDTextField:
+                    id: version_num_maj
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Major")
+                    helper_text: _("Max 999")
+                    helper_text_mode: "on_focus"
+                    max_text_length: 3
+                    input_filter: "int"
+                    write_tab: False
+                    text: "1"
+
+                MDLabel:
+                    text: "."
+                    size_hint_x: None
+                    width: self.texture_size[0]
+
+                MDTextField:
+                    id: version_num_min
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Minor")
+                    helper_text: _("Max 999")
+                    helper_text_mode: "on_focus"
+                    max_text_length: 3
+                    input_filter: "int"
+                    write_tab: False
+                    text: "000"
+
+                MDTextField:
+                    id: version_text
+                    pos_hint: {'center_y': .5}
+                    size_hint_x: 6
+                    hint_text: _("Font version text")
+                    # only require if english
+                    required: True if root.current_info_lang_code == "en" else False
+                    write_tab: False
+                    text: "Version {}.{}; {}; SVG2FontBuilder".format(version_num_maj.text[:3], version_num_min.text[:3].zfill(3), date.today().strftime("%Y%m%d"))
+
+            MDRaisedButton:
+                text: _("Save info")
+                md_bg_color: app.theme_cls.accent_color
+                on_press: root.make_name()
+
+            MDLabel:
+                font_style: "Subtitle2"
+                text: _("You may safely ignore the additional fields below.")
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            
+            SetupRow:
+                MDTextField:
+                    id: copyright
+                    pos_hint: {'center_y': .5}
+                    multiline: True
+                    max_height: "200dp"
+                    hint_text: _("Copyright notice")
+                    write_tab: False
+
+            SetupRow:
+                MDTextField:
+                    id: license
+                    pos_hint: {'center_y': .5}
+                    multiline: True
+                    max_height: "200dp"
+                    hint_text: _("License notice")
+                    write_tab: False
+
+            SetupRow:
+                MDTextField:
+                    id: license_url
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("License URL")
+                    icon_left: "web"
+                    write_tab: False
+            
+            SetupRow:
+                MDTextField:
+                    id: trademark
+                    pos_hint: {'center_y': .5}
+                    multiline: True
+                    max_height: "100dp"
+                    hint_text: _("Trademark")
+                    write_tab: False
+
+            SetupRow:
+                MDTextField:
+                    id: designer_name
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Designer name")
+                    write_tab: False
+                
+                MDTextField:
+                    id: designer_url
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Designer URL")
+                    icon_left: "web"
+                    write_tab: False
+
+            SetupRow:
+                MDTextField:
+                    id: vendor_code
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Vendor code")
+                    max_text_length: 4
+                    write_tab: False
+
+                MDTextField:
+                    id: vendor_url
+                    pos_hint: {'center_y': .5}
+                    size_hint_x: 3
+                    hint_text: _("Vendor URL")
+                    icon_left: "web"
+                    write_tab: False
+
+                MDTextField:
+                    id: manufacturer_name
+                    pos_hint: {'center_y': .5}
+                    size_hint_x: 3
+                    hint_text: _("Manufacturer name")
+                    write_tab: False
+            
+            SetupRow:
+                MDTextField:
+                    id: description
+                    pos_hint: {'center_y': .5}
+                    multiline: True
+                    max_height: "200dp"
+                    hint_text: _("Description")
+                    helper_text: _("Can contain revision information, usage recommendations, history, features, etc.")
+                    write_tab: False
+
+            SetupRow:
+                MDTextField:
+                    id: sample_text
+                    pos_hint: {'center_y': .5}
+                    hint_text: _("Sample text")
+                    write_tab: False
+

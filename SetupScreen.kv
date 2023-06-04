@@ -1,0 +1,101 @@
+#: import _ localization._
+
+<SetupScreen>
+    # get id inside out to root for object reference
+    svg_folder_path: svg_folder_path
+    csv_file_path: csv_file_path
+    use_csv: not use_csv.active
+    log_label: log_label
+
+    MDGridLayout:
+        cols: 1
+        padding: "24dp", "8dp"
+
+        SetupRow:
+            MDTextField:
+                id: svg_folder_path
+                pos_hint: {'center_y': .5}
+                hint_text: _("SVG folder")
+                helper_text: _("The folder containing SVG files")
+                helper_text_mode: "on_focus"
+                write_tab: False
+            
+            MDRectangleFlatButton:
+                text: _("Choose...")
+                pos_hint: {'center_y': .5}
+                on_release: root.on_click_svg_folder()
+
+        SetupRow:
+            spacing: "32dp"
+            MDSwitch:
+                id: use_csv
+                size_hint: None, None
+                on_active: csv_file_path.error = False
+
+            MDLabel:
+                size_hint_y:  None
+                height: use_csv.height
+                text: _("Use filename to auto assign Unicode codepoint")
+        
+        SetupRow:
+            # disable this row when use_csv checkbox is active
+            disabled: use_csv.active
+
+            MDRelativeLayout:
+                size_hint_y:  None
+                height: csv_file_path.height
+
+                MDTextField:
+                    id: csv_file_path
+                    pos_hint: {"center_y": .5}
+                    hint_text: _("CSV mapping file")
+                    helper_text: _("A CSV file mapping filenames with characters")
+                    helper_text_mode: "on_focus"
+                    write_tab: False
+
+                MDIconButton:
+                    icon: "information-outline"
+                    pos_hint: {"center_y": .5}
+                    pos: csv_file_path.width - self.width + dp(8), 0
+                    theme_text_color: "Hint"
+                    on_release: root.show_csv_info_dialog()
+
+            MDRectangleFlatButton:
+                text: _("Choose...")
+                pos_hint: {'center_y': .5}
+                on_release: root.on_click_csv_file()
+
+        # Log layout container, size_hint 1,1 as other boxlayout has `size_hint_y = None` meaning the code wont auto resize them
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 1,1
+            
+            MDLabel:
+                size_hint_y: None
+                size: self.size
+                height: self.texture_size[1] * 1.5
+                text: _("Logs")
+                font_style: "Subtitle2"
+            
+            MDScrollView:
+                size_hint_y: 1
+
+                # important: content size_hint_y must be None, set height to texture_size
+                MDLabel:
+                    id: log_label
+                    size_hint_y: None
+                    pos_hint_y: {'bottom': 1}
+                    height: self.texture_size[1]
+                    text: "No logs yet"
+        
+        MDRaisedButton:
+            text: _("Generate")
+            on_press: root.start_building()
+            md_bg_color: app.theme_cls.accent_color
+            pos_hint_y: None
+
+<SetupRow@MDBoxLayout>:
+    size: self.size[0], self.minimum_height
+    pos: self.pos
+    size_hint_y: None
+    spacing: "16dp"

@@ -1,0 +1,404 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-06-03 10:11+0800\n"
+"PO-Revision-Date: 2023-06-03 10:12+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: InfoScreen.kv:43
+msgid "Current font information language"
+msgstr "当前字体信息语言"
+
+#: InfoScreen.kv:72 InfoScreen.kv:86 InfoScreen.py:400 svgbuilder.py:233
+msgid "Only ASCII characters are accepted for English names."
+msgstr "英文名称只接受 ASCII 字符。"
+
+#: InfoScreen.kv:81
+msgid "Font family name"
+msgstr "家族名"
+
+#: InfoScreen.kv:93
+msgid "Font style name"
+msgstr "子族名"
+
+#: InfoScreen.kv:108
+msgid "Full font name"
+msgstr "字体全名"
+
+#: InfoScreen.kv:119
+msgid "Major"
+msgstr "整数"
+
+#: InfoScreen.kv:120 InfoScreen.kv:136
+msgid "Max 999"
+msgstr "最多 999"
+
+#: InfoScreen.kv:135
+msgid "Minor"
+msgstr "小数"
+
+#: InfoScreen.kv:147
+msgid "Font version text"
+msgstr "字体版本文本"
+
+#: InfoScreen.kv:154
+msgid "Save info"
+msgstr "保存信息"
+
+#: InfoScreen.kv:160
+msgid "You may safely ignore the additional fields below."
+msgstr "您可以安全地忽略下面的表格。"
+
+#: InfoScreen.kv:170
+msgid "Copyright notice"
+msgstr "版权信息"
+
+#: InfoScreen.kv:179
+msgid "License notice"
+msgstr "授权信息"
+
+#: InfoScreen.kv:186
+msgid "License URL"
+msgstr "授权网址"
+
+#: InfoScreen.kv:196
+msgid "Trademark"
+msgstr "商标"
+
+#: InfoScreen.kv:203
+msgid "Designer name"
+msgstr "设计师姓名"
+
+#: InfoScreen.kv:209
+msgid "Designer URL"
+msgstr "设计师网址"
+
+#: InfoScreen.kv:217
+msgid "Vendor code"
+msgstr "供应商序列"
+
+#: InfoScreen.kv:225
+msgid "Vendor URL"
+msgstr "供应商网址"
+
+#: InfoScreen.kv:233
+msgid "Manufacturer name"
+msgstr "制造商名称"
+
+#: InfoScreen.kv:242
+msgid "Description"
+msgstr "描述"
+
+#: InfoScreen.kv:243
+msgid ""
+"Can contain revision information, usage recommendations, history, features, "
+"etc."
+msgstr "可以包括修订信息、使用建议和特性等。"
+
+#: InfoScreen.kv:250
+msgid "Sample text"
+msgstr "示例文本"
+
+#: InfoScreen.py:97
+msgid "Add a new language"
+msgstr "添加新的语言"
+
+#: InfoScreen.py:108 InfoScreen.py:253
+msgid "CANCEL"
+msgstr "取消"
+
+#: InfoScreen.py:114 InfoScreen.py:237 InfoScreen.py:259 SetupScreen.py:59
+msgid "OK"
+msgstr "确认"
+
+#: InfoScreen.py:233
+msgid "Error"
+msgstr "错误"
+
+#: InfoScreen.py:234
+msgid "English name records can not be removed."
+msgstr "无法移除英文名称记录。"
+
+#: InfoScreen.py:249 MetricScreen.py:147 MetricScreen.py:169
+msgid "Warning"
+msgstr "警告"
+
+#: InfoScreen.py:250
+msgid "Are you sure you want to remove name records for {}?"
+msgstr "您确认要移除{}的名称记录吗？"
+
+#: InfoScreen.py:430
+msgid "Please check if all English names are present."
+msgstr "请检查确保所有英文名称已设置。"
+
+#: InfoScreen.py:470
+msgid "Font information saved."
+msgstr "字体信息已保存。"
+
+#: MetricScreen.kv:21
+msgid "UPM"
+msgstr "字身单位数（UPM）"
+
+#: MetricScreen.kv:22
+msgid "Ascender and descender value should add up to UPM value."
+msgstr "升部高和降部高的总和应该等于 UPM 值。"
+
+#: MetricScreen.kv:34
+msgid "Ascender"
+msgstr "升部高"
+
+#: MetricScreen.kv:45
+msgid "Descender"
+msgstr "降部高"
+
+#: MetricScreen.kv:58
+msgid "Line gap"
+msgstr "行间高"
+
+#: MetricScreen.kv:59
+msgid ""
+"The distance between descender of first line and ascender of second line"
+msgstr "第一行降部和第二行升部之间的的距离"
+
+#: MetricScreen.kv:81
+msgid "Auto calculate safe box metrics"
+msgstr "自动计算安全框"
+
+#: MetricScreen.kv:88
+msgid "Safe ascender"
+msgstr "安全升部高"
+
+#: MetricScreen.kv:98
+msgid "Safe descender"
+msgstr "安全降部高"
+
+#: MetricScreen.kv:105
+msgid "Save metrics"
+msgstr "保存度量"
+
+#: MetricScreen.py:148
+msgid "Ascender or descender value is greater than UPM value. Are you sure?"
+msgstr "升部高或降部高的值大于 UPM 值。您确定吗？"
+
+#: MetricScreen.py:151 MetricScreen.py:173
+msgid "Continue"
+msgstr "继续保存"
+
+#: MetricScreen.py:157 MetricScreen.py:179
+msgid "Fix"
+msgstr "返回修改"
+
+#: MetricScreen.py:170
+msgid ""
+"Ascender and descender value doesn't sum up to UPM value. This might cause "
+"issue in CJK fonts. Are you sure?"
+msgstr ""
+"升部高和降部高的总和不等于 UPM 值。这可能在中日韩字体中出现问题。您确定吗？"
+
+#: MetricScreen.py:200
+msgid "Font metrics saved."
+msgstr "字体度量已保存。"
+
+#: SVG2FontBuilder.kv:26 SVG2FontBuilder.kv:51
+msgid "SVG2FontBuilder"
+msgstr "SVG2FontBuilder"
+
+#: SVG2FontBuilder.kv:53
+msgid "SVG to OpenType font generator"
+msgstr "SVG 转 OpenType 字体"
+
+#: SVG2FontBuilder.kv:58
+msgid "Setup"
+msgstr "初始化"
+
+#: SVG2FontBuilder.kv:64
+msgid "Font Info"
+msgstr "字体信息"
+
+#: SVG2FontBuilder.kv:70
+msgid "Font Metrics"
+msgstr "字体度量"
+
+#: SVG2FontBuilder.kv:78
+msgid "Software"
+msgstr "软件"
+
+#: SVG2FontBuilder.kv:81
+msgid "Settings"
+msgstr "设置"
+
+#: SVG2FontBuilder.kv:87
+msgid "About"
+msgstr "关于"
+
+#: SVG2FontBuilder.kv:138
+msgid "Processing..."
+msgstr "处理中……"
+
+#: SVG2FontBuilder.kv:144
+msgid ""
+"Made by @NightFurySL2001\n"
+"Licensed under MIT License"
+msgstr ""
+"由 @夜煞之乐2001 (@NightFurySL2001) 制作\n"
+"于 MIT 授权下发布"
+
+#: SetupScreen.kv:18
+msgid "SVG folder"
+msgstr "SVG 文件夹"
+
+#: SetupScreen.kv:19
+msgid "The folder containing SVG files"
+msgstr "储存 SVG 文件的文件夹路径"
+
+#: SetupScreen.kv:24 SetupScreen.kv:64
+msgid "Choose..."
+msgstr "选择…"
+
+#: SetupScreen.kv:38
+msgid "Use filename to auto assign Unicode codepoint"
+msgstr "使用文件名自动辨识 Unicode 码位"
+
+#: SetupScreen.kv:51
+msgid "CSV mapping file"
+msgstr "CSV 映射表"
+
+#: SetupScreen.kv:52
+msgid "A CSV file mapping filenames with characters"
+msgstr "将 SVG 文件名与对应字符映射的 CSV 文件"
+
+#: SetupScreen.kv:77
+msgid "Logs"
+msgstr "记录"
+
+#: SetupScreen.kv:92
+msgid "Generate"
+msgstr "生成"
+
+#: SetupScreen.py:33
+msgid "Choose SVG folder"
+msgstr "选择 SVG 文件夹"
+
+#: SetupScreen.py:44
+msgid "Choose CSV file"
+msgstr "选择 CSV 文件"
+
+#: SetupScreen.py:45
+msgid "CSV file (.csv)"
+msgstr "CSV 文件（.csv）"
+
+#: SetupScreen.py:45
+msgid "Text file (.txt)"
+msgstr "纯文本文件（.txt）"
+
+#: SetupScreen.py:45 SetupScreen.py:94
+msgid "All files"
+msgstr "全部文件"
+
+#: SetupScreen.py:56
+msgid ""
+"A comma-separated file containing a list of SVG filenames and their "
+"corresponding character/glyph name.\n"
+"Example: `Artboard 1.svg, uni0041`"
+msgstr ""
+"以逗号分隔 SVG 文件名和对应字符或字形名称的文件。\n"
+"例子：`画板 1.svg, uni0041`"
+
+#: SetupScreen.py:78
+msgid "SVG folder does not exist."
+msgstr "SVG 文件夹不存在。"
+
+#: SetupScreen.py:84
+msgid "CSV file does not exist."
+msgstr "CSV 文件不存在。"
+
+#: SetupScreen.py:92
+msgid "Save font file to"
+msgstr "保存字体文件"
+
+#: SetupScreen.py:94
+msgid "OpenType/CFF font (.otf)"
+msgstr "OpenType/CFF 字体（.otf）"
+
+#: SetupScreen.py:102
+msgid "No save location chosen. Font is not generated."
+msgstr "没有选择保存位置。字体未生成。"
+
+#: svgbuilder.py:44
+msgid "Version {}  "
+msgstr "版本 {}　"
+
+#: svgbuilder.py:129
+msgid "Theme"
+msgstr "主题"
+
+#: svgbuilder.py:130
+msgid "Choose your theme"
+msgstr "选择主题"
+
+#: svgbuilder.py:137
+msgid "Language"
+msgstr "语言"
+
+#: svgbuilder.py:138
+msgid "Choose your language"
+msgstr "选择语言"
+
+#: svgbuilder.py:145
+msgid "Normalize SVG"
+msgstr "规范化 SVG"
+
+#: svgbuilder.py:146
+msgid ""
+"Normalize SVG before processing with picoSVG. Includes tracing strokes and "
+"clip paths to normal paths."
+msgstr ""
+"在生成字体前使用 picoSVG 规范化 SVG 文件。包括将描边和蒙版路径转换为标准路"
+"径。"
+
+#: svgbuilder.py:152
+msgid "Strict mode"
+msgstr "严格模式"
+
+#: svgbuilder.py:153
+msgid ""
+"When reading from CSV file, ignore SVG files that are not listed in the CSV "
+"file."
+msgstr "当读取 CSV 文件时，忽略不在 CSV 文件内的 SVG 文件。"
+
+#: svgbuilder.py:172
+msgid "Font generated! Location: {}"
+msgstr "字体已生成！位置：{}"
+
+#: svgbuilder.py:180
+msgid "Font building failed."
+msgstr "字体生成失败。"
+
+#: svgbuilder.py:251
+msgid "Please check your files are encoded using UTF-8 (especially CSV file!)."
+msgstr "请检查您的文件是否使用 UTF-8 编码格式（尤其是 CSV 文件！）。"
+
+#: svgbuilder.py:269
+msgid ""
+"If you are using Adobe Illustrator, please use \"Export As...\" instead of "
+"\"Save As...\"."
+msgstr "如果您使用 Adobe Illustrator，请使用“导出为…”而不是“另存为…”。"
+
+#: svgbuilder.py:277
+msgid "Bitmap images are not allowed in SVG files."
+msgstr "SVG 文件内不可有点阵图片。"
+
+#~ msgid "Save OTF to"
+#~ msgstr "保存 OTF 至"

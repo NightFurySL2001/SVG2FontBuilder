@@ -13,8 +13,8 @@ ___
 This programs loads multiple SVG files and import them as glyph outlines using FontTools. Currently only OpenType `.otf` files can be exported.  
 此软件将多个 SVG 向量图文件作为字形轮廓线导入 FontTools。目前只支持导出 OpenType `.otf` 文件。
 
-Details for the settings can be found in [settings.md](docs/settings.md).  
-设置部分的详细功能可在 [settings.md](docs/settings.md) 阅读。
+A detailed software usage **tutorial** may be found in [`docs` folder](docs/设计师如何制作一套字库%20手把手教你生成字库教程.md) (currently only available in Chinese). Details for the settings can be found in [settings.md](docs/settings.md).  
+详细的软件使用**教程**可以参考 [`docs` 文件夹内的文本](docs/设计师如何制作一套字库%20手把手教你生成字库教程.md)。设置部分的详细功能可在 [settings.md](docs/settings.md) 阅读。
 
 ## Currently supported formats 支援格式
 
